@@ -1,0 +1,39 @@
+#create a spiral of different shaped polygons getting smaller and smaller
+
+import turtle
+
+turtle.color("red")
+size = 100
+n = 13
+
+def back(len):
+  turtle.penup()
+  turtle.backward(len)
+  turtle.pendown()
+  
+
+def forw(len):
+  turtle.penup()
+  turtle.forward(len)
+  turtle.pendown()
+  
+def mov(len):
+  back(-1*len)
+
+def polygon(m, size1):
+  for i in range(m):
+    turtle.forward(size1)
+    turtle.left(360/m)
+
+
+
+def spiral(n, size):
+  while (n >= 3):
+    #forw(50)
+    polygon(n, size/n)
+    turtle.left(360/n)
+    back(15)
+    n= n-1
+
+
+spiral(8, 50) 
